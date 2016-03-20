@@ -6,10 +6,13 @@ const registrar = (pattern, secretaria) => {
 }
 
 const consultar = (link) => {
-  return secretarias
+  const consultas = secretarias
       .filter(({pattern}) => pattern.test(link))
       .map(({secretaria}) => secretaria.consultar(link))
-      .reduce(assign, {})
+
+  return Promise.all(consultas)
+    .then(nfes => nfes.reduce(assign, []))
+    .then(([nota = {}]) => nota)
 }
 
 module.exports = {consultar, registrar}
