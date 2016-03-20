@@ -4,6 +4,8 @@ import nfce from '../src/nfce.js'
 import rs from '../src/secretarias/rs'
 import parana from '../src/secretarias/parana'
 
+const resolve = Promise.resolve.bind(Promise)
+
 describe('NFCe', function () {
   describe('.consultar', function () {
     let link = 'dfeportal.fazenda.pr.gov.br/dfe-portal/rest/servico/consultaNFCe?chNFe=41160214953750000192650020000777871331742869'
@@ -25,14 +27,18 @@ describe('NFCe', function () {
 
     it('combina resultado de varias secretarias', function () {
       nfce.registrar(/.*/, rs)
-      rs.consultar.returns({valor: 'Valor RS'})
-      parana.consultar.returns({titulo: 'Nota Parana'})
-      expect(nfce.consultar(link)).to.include({
-        titulo: 'Nota Parana',
-        valor: 'Valor RS'
+      rs.consultar.returns(resolve({valor: 'Valor RS'}))
+      parana.consultar.returns(resolve({titulo: 'Nota Parana'}))
+
+      return nfce.consultar(link).then(nota => {
+        console.log('nota', nota)
+        expect(nota).to.include({
+          titulo: 'Nota Parana',
+          valor: 'Valor RS'
+        })
+        expect(parana.consultar.called).to.be.ok
+        expect(rs.consultar.called).to.be.ok
       })
-      expect(parana.consultar.called).to.be.ok
-      expect(rs.consultar.called).to.be.ok
     })
   })
 })

@@ -11,8 +11,7 @@ const consultar = (link) => {
       .map(({secretaria}) => secretaria.consultar(link))
 
   return Promise.all(consultas)
-    .then(nfes => nfes.reduce(assign, []))
-    .then(([nota = {}]) => nota)
+    .then(nfes => nfes.reduce((p, c) => assign(p, c), {}))
 }
 
 module.exports = {consultar, registrar}
