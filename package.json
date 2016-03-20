@@ -1,0 +1,64 @@
+{
+  "author": "Thiago Felix <thiago@thiagofelix.com> (http://thiagofelix.com)",
+  "name": "nfe-biblioteca",
+  "version": "0.0.0-semantically-released",
+  "description": "API em javascript para carregar dados sobre Nota Fiscal de Consumidor Eletrônica através do QR Code exibido no DANFE",
+  "main": "lib/nfce.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thiagofelix/nfe-biblioteca.git"
+  },
+  "directories": {
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "pretest": "npm run lint && nsp check",
+    "build": "babel src --out-dir lib",
+    "lint": "eslint src test",
+    "test": "mocha --compilers js:babel-core/register --require babel-polyfill --require mocha-vcr --ui vcr --timeout 60000",
+    "prepublish": "npm run build",
+    "prerelease": "semantic-release pre",
+    "release": "npm publish",
+    "postrelease": "semantic-release post"
+  },
+  "bugs": {
+    "email": "thiago@thiagofelix.com",
+    "url": "https://github.com/thiagofelix/nfe-biblioteca/issues"
+  },
+  "keywords": [
+    "nfe",
+    "nfce"
+  ],
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-eslint": "^5.0.0-beta10",
+    "babel-polyfill": "^6.7.2",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "commitizen": "^2.7.3",
+    "cz-conventional-changelog": "^1.1.5",
+    "eslint": "^1.10.3",
+    "eslint-config-standard": "^4.4.0",
+    "eslint-plugin-standard": "^1.3.1",
+    "iconv-lite": "^0.4.13",
+    "mocha": "^2.4.5",
+    "mocha-vcr": "^1.0.0",
+    "nock": "^7.2.2",
+    "nsp": "^2.2.1",
+    "semantic-release": "^4.3.5",
+    "sinon": "^1.17.3"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "jsdom": "^8.1.0"
+  }
+}
