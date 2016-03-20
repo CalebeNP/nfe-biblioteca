@@ -2,8 +2,8 @@ import { consultar } from './nfce'
 
 const url = process.argv.pop()
 
-if(!/\d{44}/.test(url)) {
-  throw new Error("URL Inválida");
+if (!/\d{44}/.test(url)) {
+  throw new Error('URL Inválida')
 }
 
 consultar(url)
@@ -13,6 +13,3 @@ consultar(url)
   .then(nota => {
     console.log(JSON.stringify(nota, null, 4))
   })
-
-
-
