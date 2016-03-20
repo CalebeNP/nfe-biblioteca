@@ -17,7 +17,7 @@
     "pretest": "npm run lint && nsp check",
     "build": "babel src --out-dir lib",
     "lint": "eslint src test",
-    "test": "mocha --compilers js:babel-core/register --require babel-polyfill --require mocha-vcr --ui vcr --timeout 60000",
+    "test": "mocha --compilers js:babel-core/register --require babel-polyfill --require mocha-vcr --ui vcr --timeout 60000 -i -g @noci",
     "prepublish": "npm run build",
     "prerelease": "semantic-release pre",
     "release": "npm publish",
