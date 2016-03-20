@@ -23,6 +23,9 @@
     "release": "npm publish",
     "postrelease": "semantic-release post"
   },
+  "bin" : {
+    "nfe" : "./lib/cli.js"
+  },
   "bugs": {
     "email": "thiago@thiagofelix.com",
     "url": "https://github.com/thiagofelix/nfe-biblioteca/issues"
