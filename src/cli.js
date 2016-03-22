@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { consultar } from './nfce'
 
 const url = process.argv.pop()
