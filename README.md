@@ -10,6 +10,9 @@
 [![semantic-release][semantic-image] ][semantic-url]  
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)  
 
+[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-url]: https://github.com/semantic-release/semantic-release
+
 Biblioteca em javascript para carregar dados sobre Nota Fiscal de Consumidor
 Eletrônica através do QR Code exibido no DANFE.
 
@@ -27,5 +30,15 @@ existe um esforço em adicionar suporte para estes diversos sites.
 * Parana: http://dfeportal.fazenda.pr.gov.br
 * Rio Grande do Sul: http://sefaz.rs.gov.br
 
+### Contato
 
-*Licença: MIT*
+Autor: Thiago Felix &copy; 2016
+
+* [@thiagoofelix](https://twitter.com/thiagoofelix)
+* [thiagofelix.com](http://thiagofelix.com)
+
+Suporte: se voce encontrar qualquer problema com este modulo, email / tweet /
+[open issue](https://github.com/thiagofelix/nfe-biblioteca/issues) no Github
+
+
+*License: MIT*

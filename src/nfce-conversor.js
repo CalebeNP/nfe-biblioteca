@@ -1,11 +1,10 @@
+import moment from 'moment'
 import cheerio from 'cheerio'
 
 export var converterNota = html => {
   let documento = cheerio.load(html, { normalizeWhitespace: true })
   return {
     cabecalho: extrairCabecalho(documento),
-    total: extrairTotal(documento),
-    dataCriacao: extrairDataCriacao(documento),
     emitente: extrairEmitente(documento),
     produtos: extrairProdutos(documento)
   }
@@ -28,23 +27,16 @@ const extrairEmitente = (html) => {
 const extrairCabecalho = documento => {
   const campos = documento('#NFe > fieldset:nth-child(1) > table tr > td')
   const campo = idx => campos.eq(idx).find('span').text()
+  const toDate = (val) => moment(val, 'DD/MM/YYYY HH:mm:ss-HH:mm').toDate()
 
   return {
     modelo: campo(0),
     serie: campo(1),
     numero: campo(2),
-    dataEmissao: campo(3),
-    dataEntradaSaida: campo(4),
+    dataEmissao: toDate(campo(3)),
+    dataEntradaSaida: toDate(campo(4)),
     total: campo(5)
   }
-}
-
-const extrairDataCriacao = (html) => {
-  return html('#NFe > fieldset:nth-child(1) > table > tr > td:nth-child(4) span').text()
-}
-
-const extrairTotal = (html) => {
-  return html('#NFe > fieldset:nth-child(1) > table > tr > td:nth-child(6) span').text()
 }
 
 const extrairProdutos = (html) => {

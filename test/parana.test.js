@@ -17,12 +17,10 @@ const NOTA =
       'modelo': '65',
       'serie': '2',
       'numero': '77787',
-      'dataEmissao': '21/02/2016 07:38:50-03:00',
-      'dataEntradaSaida': '',
+      'dataEmissao': new Date('2016-02-21T06:00:50.000Z'),
+      'dataEntradaSaida': new Date(''),
       'total': '135,72'
     },
-    'total': '',
-    'dataCriacao': '',
     'emitente': {
       'nome': '',
       'razaoSocial': 'AUTO POSTO PARANA LTDA',

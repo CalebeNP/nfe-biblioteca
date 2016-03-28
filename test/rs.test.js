@@ -17,12 +17,10 @@ const NOTA =
       'modelo': '65',
       'serie': '119',
       'numero': '10780',
-      'dataEmissao': '27/01/2016 09:17:01-02:00',
-      'dataEntradaSaida': '',
+      'dataEmissao': new Date('2016-01-27T04:00:01.000Z'),
+      'dataEntradaSaida': new Date(''),
       'total': '93,46'
     },
-    'total': '',
-    'dataCriacao': '',
     'emitente': {
       'nome': '',
       'razaoSocial': 'COMPANHIA ZAFFARI COMÉRCIO E INDÚSTRIA',

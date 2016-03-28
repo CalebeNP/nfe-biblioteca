@@ -23,8 +23,8 @@
     "release": "npm publish",
     "postrelease": "semantic-release post"
   },
-  "bin" : {
-    "nfe" : "./lib/cli.js"
+  "bin": {
+    "nfe": "./lib/cli.js"
   },
   "bugs": {
     "email": "thiago@thiagofelix.com",
@@ -60,8 +60,9 @@
     "sinon": "^1.17.3"
   },
   "dependencies": {
-    "iconv-lite": "^0.4.13",
     "cheerio": "^0.20.0",
-    "jsdom": "^8.1.0"
+    "iconv-lite": "^0.4.13",
+    "jsdom": "^8.1.0",
+    "moment": "^2.12.0"
   }
 }
