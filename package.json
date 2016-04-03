@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/thiagofelix/nfe-biblioteca.git"
   },
+  "files": [
+    "lib"
+  ],
   "directories": {
     "lib": "./lib",
     "test": "./test"
